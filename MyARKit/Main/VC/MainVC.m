@@ -7,6 +7,8 @@
 //
 
 #import "MainVC.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import "MyARKit-Swift.h"
 
 @interface MainVC () <ARSCNViewDelegate>
 
@@ -15,6 +17,8 @@
 @property (nonatomic, assign) BOOL isCapturing;
 @property (nonatomic, strong) UIButton* btn3DText;
 @property (nonatomic, strong) UIButton* btnEmoji;
+
+@property (nonatomic, strong) RecordARProxy* recorder;
 
 @end
 
@@ -27,6 +31,8 @@
     [self setupViews];
     [self layoutSubviews];
     [self setupListeners];
+    
+    self.recorder = [[RecordARProxy alloc] initWithARSceneKit:self.sceneView];
 }
 
 - (void)setupViews {
@@ -85,9 +91,19 @@
     if (self.isCapturing) {
         NSLog(@"停止拍摄");
         [self.btnCaptureVideo setTitle:@"拍摄" forState:UIControlStateNormal];
+        [self.recorder stop:^(NSURL * url) {
+            NSLog(@"url %@", url);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                MPMoviePlayerViewController* playerVc = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
+                [self presentViewController:playerVc animated:YES completion:nil];
+            });
+            
+        }];
     } else {
         NSLog(@"拍摄");
         [self.btnCaptureVideo setTitle:@"停止" forState:UIControlStateNormal];
+        [self.recorder record];
     }
     
     self.isCapturing = !self.isCapturing;

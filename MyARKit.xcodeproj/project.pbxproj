@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2810DB491FB975F1008D69D9 /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2810DB421FB97218008D69D9 /* ARVideoKit.framework */; };
+		2810DB4A1FB975F1008D69D9 /* ARVideoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2810DB421FB97218008D69D9 /* ARVideoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2810DB4D1FB97787008D69D9 /* RecordARProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810DB4C1FB97787008D69D9 /* RecordARProxy.swift */; };
 		283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6631FB93A2B00E40D14 /* AppDelegate.m */; };
 		283BE6661FB93A2B00E40D14 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 283BE6651FB93A2B00E40D14 /* art.scnassets */; };
 		283BE66E1FB93A2B00E40D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283BE66D1FB93A2B00E40D14 /* Assets.xcassets */; };
@@ -17,7 +20,24 @@
 		283BE68F1FB94D7E00E40D14 /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE68E1FB94D7E00E40D14 /* UIFont+Extension.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2810DB4B1FB975F1008D69D9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2810DB4A1FB975F1008D69D9 /* ARVideoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2810DB421FB97218008D69D9 /* ARVideoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARVideoKit.framework; sourceTree = "<group>"; };
+		2810DB441FB972C8008D69D9 /* MyARKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyARKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		2810DB4C1FB97787008D69D9 /* RecordARProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordARProxy.swift; sourceTree = "<group>"; };
 		283BE65F1FB93A2B00E40D14 /* MyARKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyARKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283BE6621FB93A2B00E40D14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		283BE6631FB93A2B00E40D14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,12 +62,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2810DB491FB975F1008D69D9 /* ARVideoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2810DB401FB971F4008D69D9 /* 3rdPart */ = {
+			isa = PBXGroup;
+			children = (
+				2810DB411FB97207008D69D9 /* ARRecord */,
+			);
+			path = 3rdPart;
+			sourceTree = "<group>";
+		};
+		2810DB411FB97207008D69D9 /* ARRecord */ = {
+			isa = PBXGroup;
+			children = (
+				2810DB421FB97218008D69D9 /* ARVideoKit.framework */,
+			);
+			path = ARRecord;
+			sourceTree = "<group>";
+		};
 		283BE6561FB93A2B00E40D14 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +134,7 @@
 			children = (
 				283BE67B1FB93DD400E40D14 /* MainVC.h */,
 				283BE67C1FB93DD400E40D14 /* MainVC.m */,
+				2810DB4C1FB97787008D69D9 /* RecordARProxy.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -127,6 +165,7 @@
 		283BE6861FB942E400E40D14 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				2810DB401FB971F4008D69D9 /* 3rdPart */,
 				283BE6871FB942EC00E40D14 /* Extension */,
 			);
 			path = Common;
@@ -146,6 +185,7 @@
 		283BE68B1FB94D4000E40D14 /* supportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2810DB441FB972C8008D69D9 /* MyARKit-Bridging-Header.h */,
 				283BE68C1FB94D6600E40D14 /* Lanting_GBK.ttf */,
 			);
 			path = supportFiles;
@@ -161,6 +201,7 @@
 				283BE65B1FB93A2B00E40D14 /* Sources */,
 				283BE65C1FB93A2B00E40D14 /* Frameworks */,
 				283BE65D1FB93A2B00E40D14 /* Resources */,
+				2810DB4B1FB975F1008D69D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,6 +223,7 @@
 				TargetAttributes = {
 					283BE65E1FB93A2B00E40D14 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -223,6 +265,7 @@
 			files = (
 				283BE67D1FB93DD400E40D14 /* MainVC.m in Sources */,
 				283BE6741FB93A2B00E40D14 /* main.m in Sources */,
+				2810DB4D1FB97787008D69D9 /* RecordARProxy.swift in Sources */,
 				283BE68F1FB94D7E00E40D14 /* UIFont+Extension.m in Sources */,
 				283BE68A1FB9439100E40D14 /* UIView+RelativeLayout.m in Sources */,
 				283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */,
@@ -342,8 +385,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38347LA2XG;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyARKit/Common/3rdPart/ARRecord",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ./MyARKit/MyARKit.pch;
@@ -352,6 +402,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuotiansudai.MyARKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./MyARKit/supportFiles/MyARKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -361,8 +414,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 38347LA2XG;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MyARKit/Common/3rdPart/ARRecord",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ./MyARKit/MyARKit.pch;
@@ -371,6 +431,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuotiansudai.MyARKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "./MyARKit/supportFiles/MyARKit-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

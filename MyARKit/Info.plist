@@ -23,7 +23,15 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This application will use the camera for Augmented Reality.</string>
+	<string>应用需要使用您的相机</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>视频录制</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>导出AR视频</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Lanting_GBK.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -43,10 +51,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Lanting_GBK.ttf</string>
 	</array>
 </dict>
 </plist>
