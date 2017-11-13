@@ -18,7 +18,7 @@
 @property (nonatomic, strong) UIButton* btn3DText;
 @property (nonatomic, strong) UIButton* btnEmoji;
 
-@property (nonatomic, strong) RecordARProxy* recorder;
+@property (nonatomic, strong) RecordARWrapper* recorder;
 
 @end
 
@@ -32,7 +32,7 @@
     [self layoutSubviews];
     [self setupListeners];
     
-    self.recorder = [[RecordARProxy alloc] initWithARSceneKit:self.sceneView];
+    self.recorder = [[RecordARWrapper alloc] initWithARSceneKit:self.sceneView];
 }
 
 - (void)setupViews {
@@ -92,9 +92,17 @@
         NSLog(@"停止拍摄");
         [self.btnCaptureVideo setTitle:@"拍摄" forState:UIControlStateNormal];
         [self.recorder stop:^(NSURL * url) {
-            NSLog(@"url %@", url);
+            NSLog(@"file path: %@", [url path]);
             
+            NSError* error = [[NSError alloc] init];
+            NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[url path] error:&error];
+            unsigned long long length = [fileAttributes fileSize];
+            float ff = length/1024.0/1024.0;
+            NSLog(@"file size: %.2fM",ff);
+            
+            weakify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
+                strongify(self);
                 MPMoviePlayerViewController* playerVc = [[MPMoviePlayerViewController alloc] initWithContentURL:url];
                 [self presentViewController:playerVc animated:YES completion:nil];
             });

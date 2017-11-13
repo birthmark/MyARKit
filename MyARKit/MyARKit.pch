@@ -11,5 +11,6 @@
 
 #import "UIView+RelativeLayout.h"
 #import "UIFont+Extension.h"
+#import "CommonDef.h"
 
 #endif /* MyARKit_h */

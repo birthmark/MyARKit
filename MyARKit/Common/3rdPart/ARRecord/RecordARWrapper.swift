@@ -12,57 +12,25 @@ import ARKit
 
 @objc public enum RecordStatus : Int {
     
-    /// The current status of the recorder is unknown.
     case unknown
-    
-    /// The current recorder is ready to record.
     case readyToRecord
-    
-    /// The current recorder is recording.
     case recording
-    
-    /// The current recorder is paused.
     case paused
 }
 
 @objc public protocol RecordDelegate : NSObjectProtocol {
     
-    /**
-     A protocol method that is triggered when a recorder ends recording.
-     - parameter path: A `URL` object that returns the video file path.
-     - parameter noError: A boolean that returns true when the recorder ends without errors. Otherwise, it returns false.
-     */
     func recorder(didEndRecording path: URL, with noError: Bool)
-    
-    /**
-     A protocol method that is triggered when a recorder fails recording.
-     - parameter error: An `Error` object that returns the error value.
-     - parameter status: A string that returns the reason of the recorder failure in a string literal format.
-     */
     func recorder(didFailRecording error: Error?, and status: String)
-    
-    /**
-     A protocol method that is triggered when the application will resign active.
-     - parameter status: A `RecordARStatus` object that returns the AR recorder current status.
-     
-     
-     - NOTE: Check [applicationWillResignActive(_:)](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622950-applicationwillresignactive) for more information.
-     */
     func recorder(willEnterBackground status: RecordStatus)
 }
 
 @objc public protocol RenderDelegate : NSObjectProtocol {
     
-    /**
-     A protocol method that is triggered when a frame renders the `ARSCNView` or `ARSKView` content with the device's camera stream.
-     - parameter buffer: A `CVPixelBuffer` object that returns the rendered buffer.
-     - parameter time: A `CMTime` object that returns the time a buffer was rendered with.
-     - parameter rawBuffer: A `CVPixelBuffer` object that returns the raw buffer.
-     */
     func frame(didRender buffer: CVPixelBuffer, with time: CMTime, using rawBuffer: CVPixelBuffer)
 }
 
-public class RecordARProxy : NSObject, RenderARDelegate, RecordARDelegate {
+public class RecordARWrapper : NSObject, RenderARDelegate, RecordARDelegate {
     
     public var delegate: RecordDelegate?
     
@@ -123,7 +91,7 @@ public class RecordARProxy : NSObject, RenderARDelegate, RecordARDelegate {
 }
 
 //MARK: - ARVideoKit Delegate Methods
-extension RecordARProxy {
+extension RecordARWrapper {
     public func frame(didRender buffer: CVPixelBuffer, with time: CMTime, using rawBuffer: CVPixelBuffer) {
         // Do some image/video processing.
     }

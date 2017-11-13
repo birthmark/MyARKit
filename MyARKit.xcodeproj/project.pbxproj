@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2810DB491FB975F1008D69D9 /* ARVideoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2810DB421FB97218008D69D9 /* ARVideoKit.framework */; };
 		2810DB4A1FB975F1008D69D9 /* ARVideoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2810DB421FB97218008D69D9 /* ARVideoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2810DB4D1FB97787008D69D9 /* RecordARProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810DB4C1FB97787008D69D9 /* RecordARProxy.swift */; };
+		2810DB4D1FB97787008D69D9 /* RecordARWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2810DB4C1FB97787008D69D9 /* RecordARWrapper.swift */; };
 		283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6631FB93A2B00E40D14 /* AppDelegate.m */; };
 		283BE6661FB93A2B00E40D14 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 283BE6651FB93A2B00E40D14 /* art.scnassets */; };
 		283BE66E1FB93A2B00E40D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283BE66D1FB93A2B00E40D14 /* Assets.xcassets */; };
@@ -37,7 +37,8 @@
 /* Begin PBXFileReference section */
 		2810DB421FB97218008D69D9 /* ARVideoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARVideoKit.framework; sourceTree = "<group>"; };
 		2810DB441FB972C8008D69D9 /* MyARKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyARKit-Bridging-Header.h"; sourceTree = "<group>"; };
-		2810DB4C1FB97787008D69D9 /* RecordARProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordARProxy.swift; sourceTree = "<group>"; };
+		2810DB4C1FB97787008D69D9 /* RecordARWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordARWrapper.swift; sourceTree = "<group>"; };
+		2810DB4E1FB99DAE008D69D9 /* CommonDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDef.h; sourceTree = "<group>"; };
 		283BE65F1FB93A2B00E40D14 /* MyARKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyARKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283BE6621FB93A2B00E40D14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		283BE6631FB93A2B00E40D14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		2810DB411FB97207008D69D9 /* ARRecord */ = {
 			isa = PBXGroup;
 			children = (
+				2810DB4C1FB97787008D69D9 /* RecordARWrapper.swift */,
 				2810DB421FB97218008D69D9 /* ARVideoKit.framework */,
 			);
 			path = ARRecord;
@@ -104,9 +106,9 @@
 		283BE6611FB93A2B00E40D14 /* MyARKit */ = {
 			isa = PBXGroup;
 			children = (
+				283BE67A1FB93DAF00E40D14 /* Main */,
 				283BE6861FB942E400E40D14 /* Common */,
 				283BE6821FB940FF00E40D14 /* AppRoot */,
-				283BE67A1FB93DAF00E40D14 /* Main */,
 				283BE6621FB93A2B00E40D14 /* AppDelegate.h */,
 				283BE6631FB93A2B00E40D14 /* AppDelegate.m */,
 				283BE6651FB93A2B00E40D14 /* art.scnassets */,
@@ -134,7 +136,6 @@
 			children = (
 				283BE67B1FB93DD400E40D14 /* MainVC.h */,
 				283BE67C1FB93DD400E40D14 /* MainVC.m */,
-				2810DB4C1FB97787008D69D9 /* RecordARProxy.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -167,6 +168,7 @@
 			children = (
 				2810DB401FB971F4008D69D9 /* 3rdPart */,
 				283BE6871FB942EC00E40D14 /* Extension */,
+				2810DB4E1FB99DAE008D69D9 /* CommonDef.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -265,7 +267,7 @@
 			files = (
 				283BE67D1FB93DD400E40D14 /* MainVC.m in Sources */,
 				283BE6741FB93A2B00E40D14 /* main.m in Sources */,
-				2810DB4D1FB97787008D69D9 /* RecordARProxy.swift in Sources */,
+				2810DB4D1FB97787008D69D9 /* RecordARWrapper.swift in Sources */,
 				283BE68F1FB94D7E00E40D14 /* UIFont+Extension.m in Sources */,
 				283BE68A1FB9439100E40D14 /* UIView+RelativeLayout.m in Sources */,
 				283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */,
