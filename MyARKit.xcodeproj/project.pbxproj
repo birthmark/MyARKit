@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6631FB93A2B00E40D14 /* AppDelegate.m */; };
 		283BE6661FB93A2B00E40D14 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 283BE6651FB93A2B00E40D14 /* art.scnassets */; };
-		283BE6691FB93A2B00E40D14 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6681FB93A2B00E40D14 /* ViewController.m */; };
-		283BE66C1FB93A2B00E40D14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283BE66A1FB93A2B00E40D14 /* Main.storyboard */; };
 		283BE66E1FB93A2B00E40D14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 283BE66D1FB93A2B00E40D14 /* Assets.xcassets */; };
-		283BE6711FB93A2B00E40D14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 283BE66F1FB93A2B00E40D14 /* LaunchScreen.storyboard */; };
 		283BE6741FB93A2B00E40D14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6731FB93A2B00E40D14 /* main.m */; };
+		283BE67D1FB93DD400E40D14 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE67C1FB93DD400E40D14 /* MainVC.m */; };
+		283BE6851FB9411C00E40D14 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6841FB9411C00E40D14 /* BaseVC.m */; };
+		283BE68A1FB9439100E40D14 /* UIView+RelativeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6891FB9439100E40D14 /* UIView+RelativeLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +21,16 @@
 		283BE6621FB93A2B00E40D14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		283BE6631FB93A2B00E40D14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		283BE6651FB93A2B00E40D14 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		283BE6671FB93A2B00E40D14 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		283BE6681FB93A2B00E40D14 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		283BE66B1FB93A2B00E40D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		283BE66D1FB93A2B00E40D14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		283BE6701FB93A2B00E40D14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		283BE6721FB93A2B00E40D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		283BE6731FB93A2B00E40D14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		283BE67B1FB93DD400E40D14 /* MainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		283BE67C1FB93DD400E40D14 /* MainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
+		283BE6811FB93E3200E40D14 /* MyARKit.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyARKit.pch; sourceTree = "<group>"; };
+		283BE6831FB9411C00E40D14 /* BaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		283BE6841FB9411C00E40D14 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		283BE6881FB9439100E40D14 /* UIView+RelativeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RelativeLayout.h"; sourceTree = "<group>"; };
+		283BE6891FB9439100E40D14 /* UIView+RelativeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RelativeLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,18 +63,77 @@
 		283BE6611FB93A2B00E40D14 /* MyARKit */ = {
 			isa = PBXGroup;
 			children = (
+				283BE6861FB942E400E40D14 /* Common */,
+				283BE6821FB940FF00E40D14 /* AppRoot */,
+				283BE67A1FB93DAF00E40D14 /* Main */,
 				283BE6621FB93A2B00E40D14 /* AppDelegate.h */,
 				283BE6631FB93A2B00E40D14 /* AppDelegate.m */,
 				283BE6651FB93A2B00E40D14 /* art.scnassets */,
-				283BE6671FB93A2B00E40D14 /* ViewController.h */,
-				283BE6681FB93A2B00E40D14 /* ViewController.m */,
-				283BE66A1FB93A2B00E40D14 /* Main.storyboard */,
 				283BE66D1FB93A2B00E40D14 /* Assets.xcassets */,
-				283BE66F1FB93A2B00E40D14 /* LaunchScreen.storyboard */,
 				283BE6721FB93A2B00E40D14 /* Info.plist */,
 				283BE6731FB93A2B00E40D14 /* main.m */,
+				283BE6811FB93E3200E40D14 /* MyARKit.pch */,
 			);
 			path = MyARKit;
+			sourceTree = "<group>";
+		};
+		283BE67A1FB93DAF00E40D14 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				283BE6801FB93DEF00E40D14 /* VO */,
+				283BE67F1FB93DE200E40D14 /* View */,
+				283BE67E1FB93DDC00E40D14 /* VC */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		283BE67E1FB93DDC00E40D14 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				283BE67B1FB93DD400E40D14 /* MainVC.h */,
+				283BE67C1FB93DD400E40D14 /* MainVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		283BE67F1FB93DE200E40D14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		283BE6801FB93DEF00E40D14 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		283BE6821FB940FF00E40D14 /* AppRoot */ = {
+			isa = PBXGroup;
+			children = (
+				283BE6831FB9411C00E40D14 /* BaseVC.h */,
+				283BE6841FB9411C00E40D14 /* BaseVC.m */,
+			);
+			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		283BE6861FB942E400E40D14 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				283BE6871FB942EC00E40D14 /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		283BE6871FB942EC00E40D14 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				283BE6881FB9439100E40D14 /* UIView+RelativeLayout.h */,
+				283BE6891FB9439100E40D14 /* UIView+RelativeLayout.m */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,9 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				283BE6661FB93A2B00E40D14 /* art.scnassets in Resources */,
-				283BE6711FB93A2B00E40D14 /* LaunchScreen.storyboard in Resources */,
 				283BE66E1FB93A2B00E40D14 /* Assets.xcassets in Resources */,
-				283BE66C1FB93A2B00E40D14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,32 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				283BE6691FB93A2B00E40D14 /* ViewController.m in Sources */,
+				283BE67D1FB93DD400E40D14 /* MainVC.m in Sources */,
 				283BE6741FB93A2B00E40D14 /* main.m in Sources */,
+				283BE68A1FB9439100E40D14 /* UIView+RelativeLayout.m in Sources */,
 				283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */,
+				283BE6851FB9411C00E40D14 /* BaseVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		283BE66A1FB93A2B00E40D14 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				283BE66B1FB93A2B00E40D14 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		283BE66F1FB93A2B00E40D14 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				283BE6701FB93A2B00E40D14 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		283BE6751FB93A2B00E40D14 /* Debug */ = {
@@ -282,13 +325,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38347LA2XG;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./MyARKit/MyARKit.pch;
 				INFOPLIST_FILE = MyARKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuotiansudai.MyARKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -296,13 +344,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38347LA2XG;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ./MyARKit/MyARKit.pch;
 				INFOPLIST_FILE = MyARKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tuotiansudai.MyARKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

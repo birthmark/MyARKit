@@ -1,0 +1,14 @@
+//
+//  MyARKit.pch
+//  MyARKit
+//
+//  Created by alankong on 2017/11/13.
+//  Copyright © 2017年 tuotiansudai. All rights reserved.
+//
+
+#ifndef MyARKit_h
+#define MyARKit_h
+
+#import "UIView+RelativeLayout.h"
+
+#endif /* MyARKit_h */
