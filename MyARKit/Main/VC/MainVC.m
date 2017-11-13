@@ -10,7 +10,7 @@
 
 @interface MainVC () <ARSCNViewDelegate>
 
-@property (nonatomic, strong) IBOutlet ARSCNView *sceneView;
+@property (nonatomic, strong) ARSCNView *sceneView;
 @property (nonatomic, strong) UIButton* btnCaptureVideo;
 @property (nonatomic, assign) BOOL isCapturing;
 @property (nonatomic, strong) UIButton* btn3DText;
@@ -25,6 +25,7 @@
     [self hideNavgationBar];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupViews];
+    [self layoutSubviews];
     [self setupListeners];
 }
 
@@ -41,16 +42,12 @@
     //
     self.btnCaptureVideo = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     [self.view addSubview:self.btnCaptureVideo];
-    self.btnCaptureVideo.centerX = self.view.width/2;
-    self.btnCaptureVideo.bottom = self.view.height-50;
     [self.btnCaptureVideo setTitle:@"拍摄" forState:UIControlStateNormal];
     self.btnCaptureVideo.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
     
     //
     self.btn3DText =  [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
     [self.view addSubview:self.btn3DText];
-    self.btn3DText.right = self.btnCaptureVideo.left-30;
-    self.btn3DText.centerY = self.btnCaptureVideo.centerY;
     self.btn3DText.titleLabel.font = [UIFont systemFontOfSize:14];
     [self.btn3DText setTitle:@"3D文字" forState:UIControlStateNormal];
     self.btn3DText.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
@@ -58,11 +55,21 @@
     //
     self.btnEmoji =  [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
     [self.view addSubview:self.btnEmoji];
-    self.btnEmoji.left = self.btnCaptureVideo.right+30;
-    self.btnEmoji.centerY = self.btnCaptureVideo.centerY;
     self.btnEmoji.titleLabel.font = [UIFont systemFontOfSize:14];
     [self.btnEmoji setTitle:@"Emoji" forState:UIControlStateNormal];
     self.btnEmoji.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+}
+
+- (void)layoutSubviews
+{
+    self.btnCaptureVideo.centerX = self.view.width/2;
+    self.btnCaptureVideo.bottom = self.view.height-50;
+    
+    self.btn3DText.right = self.btnCaptureVideo.left-30;
+    self.btn3DText.centerY = self.btnCaptureVideo.centerY;
+    
+    self.btnEmoji.left = self.btnCaptureVideo.right+30;
+    self.btnEmoji.centerY = self.btnCaptureVideo.centerY;
 }
 
 - (void)setupListeners {
@@ -92,6 +99,15 @@
         return;
     }
     NSLog(@"3D文字");
+    
+    SCNNode* childNode = [SCNNode node];
+    childNode.position = SCNVector3Make(-0.2, 0, -1);
+    childNode.scale = SCNVector3Make(0.02, 0.02, 0.02);
+    SCNText* text = [SCNText textWithString:@"双击修改" extrusionDepth:0.05];
+    text.firstMaterial.diffuse.contents = [UIColor blueColor];
+    text.font = [UIFont appLanTingBoldFont:5];
+    childNode.geometry = text;
+    [self.sceneView.scene.rootNode addChildNode:childNode];
 }
 
 - (void)btnEmojiAction

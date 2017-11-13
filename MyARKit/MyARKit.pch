@@ -10,5 +10,6 @@
 #define MyARKit_h
 
 #import "UIView+RelativeLayout.h"
+#import "UIFont+Extension.h"
 
 #endif /* MyARKit_h */

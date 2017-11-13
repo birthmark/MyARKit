@@ -14,6 +14,7 @@
 		283BE67D1FB93DD400E40D14 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE67C1FB93DD400E40D14 /* MainVC.m */; };
 		283BE6851FB9411C00E40D14 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6841FB9411C00E40D14 /* BaseVC.m */; };
 		283BE68A1FB9439100E40D14 /* UIView+RelativeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE6891FB9439100E40D14 /* UIView+RelativeLayout.m */; };
+		283BE68F1FB94D7E00E40D14 /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 283BE68E1FB94D7E00E40D14 /* UIFont+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,9 @@
 		283BE6841FB9411C00E40D14 /* BaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
 		283BE6881FB9439100E40D14 /* UIView+RelativeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RelativeLayout.h"; sourceTree = "<group>"; };
 		283BE6891FB9439100E40D14 /* UIView+RelativeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RelativeLayout.m"; sourceTree = "<group>"; };
+		283BE68C1FB94D6600E40D14 /* Lanting_GBK.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lanting_GBK.ttf; sourceTree = "<group>"; };
+		283BE68D1FB94D7E00E40D14 /* UIFont+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Extension.h"; sourceTree = "<group>"; };
+		283BE68E1FB94D7E00E40D14 /* UIFont+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				283BE6721FB93A2B00E40D14 /* Info.plist */,
 				283BE6731FB93A2B00E40D14 /* main.m */,
 				283BE6811FB93E3200E40D14 /* MyARKit.pch */,
+				283BE68B1FB94D4000E40D14 /* supportFiles */,
 			);
 			path = MyARKit;
 			sourceTree = "<group>";
@@ -132,8 +137,18 @@
 			children = (
 				283BE6881FB9439100E40D14 /* UIView+RelativeLayout.h */,
 				283BE6891FB9439100E40D14 /* UIView+RelativeLayout.m */,
+				283BE68D1FB94D7E00E40D14 /* UIFont+Extension.h */,
+				283BE68E1FB94D7E00E40D14 /* UIFont+Extension.m */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		283BE68B1FB94D4000E40D14 /* supportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				283BE68C1FB94D6600E40D14 /* Lanting_GBK.ttf */,
+			);
+			path = supportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +223,7 @@
 			files = (
 				283BE67D1FB93DD400E40D14 /* MainVC.m in Sources */,
 				283BE6741FB93A2B00E40D14 /* main.m in Sources */,
+				283BE68F1FB94D7E00E40D14 /* UIFont+Extension.m in Sources */,
 				283BE68A1FB9439100E40D14 /* UIView+RelativeLayout.m in Sources */,
 				283BE6641FB93A2B00E40D14 /* AppDelegate.m in Sources */,
 				283BE6851FB9411C00E40D14 /* BaseVC.m in Sources */,
